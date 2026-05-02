@@ -21,6 +21,7 @@ npx skills@latest add kklasing/skills
 
 ### Productivity
 
+* [`grill-me`](./skills/productivity/grill-me/SKILL.md) -- Interview the user relentlessly about a plan or design, resolving every branch of the decision tree
 * [`write-a-skill`](./skills/productivity/write-a-skill/SKILL.md) -- Write a new skill with the proper structure and bundeled resource
 
 ### Tools / misc
