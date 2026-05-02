@@ -10,6 +10,7 @@ Daily code work.
 * [`sb-nextjs`](./sb-nextjs/SKILL.md) -- Sunbytes implementation guardrails for Next.js (App Router) — Server/Client Components, caching, routing, security headers
 * [`sb-react`](./sb-react/SKILL.md) -- Sunbytes implementation guardrails for React — components, hooks, state, performance, accessibility, security
 * [`sb-typescript`](./sb-typescript/SKILL.md) -- Sunbytes implementation guardrails for TypeScript — strict typing, async, security, SOLID/KISS/DRY, testing, Sunbytes coding standards
+* [`sb-write-vitest`](./sb-write-vitest/SKILL.md) -- Backfill modern Vitest unit tests beside existing source files (`*.test.*`, never `*.spec.*`)
 * [`setup-sb-skills`](./setup-sb-skills/SKILL.md) -- Bootstrap a repo's `## Agent skills` config (issue tracker, triage labels, domain docs) for the engineering skills
 * [`tdd`](./tdd/SKILL.md) -- Test-driven development with the red-green-refactor loop
 * [`to-issues`](./to-issues/SKILL.md) -- Break a plan or PRD into independently-grabbable issues using tracer-bullet vertical slices

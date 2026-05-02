@@ -9,6 +9,7 @@
     "./skills/engineering/sb-nextjs",
     "./skills/engineering/sb-react",
     "./skills/engineering/sb-typescript",
+    "./skills/engineering/sb-write-vitest",
     "./skills/engineering/setup-sb-skills",
     "./skills/engineering/tdd",
     "./skills/engineering/to-issues",
