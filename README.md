@@ -22,6 +22,7 @@ npx skills@latest add kklasing/skills
 * [`diagnose`](./skills/engineering/diagnose/SKILL.md) -- Disciplined diagnosis loop for hard bugs and performance regressions
 * [`grill-with-docs`](./skills/engineering/grill-with-docs/SKILL.md) -- Stress-test a plan against the project's domain model and update CONTEXT.md/ADRs inline
 * [`improve-codebase-architecture`](./skills/engineering/improve-codebase-architecture/SKILL.md) -- Find deepening opportunities in a codebase, informed by CONTEXT.md and `docs/adr/`
+* [`review-pr`](./skills/engineering/review-pr/SKILL.md) -- End-to-end GitHub PR review (code, security, conventions, tests) that posts top-level and inline comments via `gh`
 * [`setup-sunbytes-skills`](./skills/engineering/setup-sunbytes-skills/SKILL.md) -- Bootstrap a repo's `## Agent skills` config (issue tracker, triage labels, domain docs) for the engineering skills
 * [`tdd`](./skills/engineering/tdd/SKILL.md) -- Test-driven development with the red-green-refactor loop
 * [`to-issues`](./skills/engineering/to-issues/SKILL.md) -- Break a plan or PRD into independently-grabbable issues using tracer-bullet vertical slices
