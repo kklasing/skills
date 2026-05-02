@@ -8,8 +8,8 @@
 npx skills@latest add kklasing/skills
 ```
 
-2. Pick the skills and which coding agent You want to install them on. **Make sure to select the /setup-sunbytes-skills**
-3. Run /setup-sunbytes-skills in your agent. It will:
+2. Pick the skills and which coding agent You want to install them on. **Make sure to select the /setup-sb-skills**
+3. Run /setup-sb-skills in your agent. It will:
 
 * Ask you which issue tracker you want to use (GitHub, Linear, or local files)
 * Ask you what labels you apply to ticks when you triage them (/triage uses labels)
@@ -27,7 +27,7 @@ npx skills@latest add kklasing/skills
 * [`sb-nextjs`](./skills/engineering/sb-nextjs/SKILL.md) -- Sunbytes implementation guardrails for Next.js (App Router) — Server/Client Components, caching, routing, security headers
 * [`sb-react`](./skills/engineering/sb-react/SKILL.md) -- Sunbytes implementation guardrails for React — components, hooks, state, performance, accessibility, security
 * [`sb-typescript`](./skills/engineering/sb-typescript/SKILL.md) -- Sunbytes implementation guardrails for TypeScript — strict typing, async, security, SOLID/KISS/DRY, testing, Sunbytes coding standards
-* [`setup-sunbytes-skills`](./skills/engineering/setup-sunbytes-skills/SKILL.md) -- Bootstrap a repo's `## Agent skills` config (issue tracker, triage labels, domain docs) for the engineering skills
+* [`setup-sb-skills`](./skills/engineering/setup-sb-skills/SKILL.md) -- Bootstrap a repo's `## Agent skills` config (issue tracker, triage labels, domain docs) for the engineering skills
 * [`tdd`](./skills/engineering/tdd/SKILL.md) -- Test-driven development with the red-green-refactor loop
 * [`to-issues`](./skills/engineering/to-issues/SKILL.md) -- Break a plan or PRD into independently-grabbable issues using tracer-bullet vertical slices
 * [`to-prd`](./skills/engineering/to-prd/SKILL.md) -- Turn the current conversation context into a PRD on the project issue tracker
