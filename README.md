@@ -23,6 +23,10 @@ npx skills@latest add kklasing/skills
 * [`grill-with-docs`](./skills/engineering/grill-with-docs/SKILL.md) -- Stress-test a plan against the project's domain model and update CONTEXT.md/ADRs inline
 * [`improve-codebase-architecture`](./skills/engineering/improve-codebase-architecture/SKILL.md) -- Find deepening opportunities in a codebase, informed by CONTEXT.md and `docs/adr/`
 * [`review-pr`](./skills/engineering/review-pr/SKILL.md) -- End-to-end GitHub PR review (code, security, conventions, tests) that posts top-level and inline comments via `gh`
+* [`sb-nestjs`](./skills/engineering/sb-nestjs/SKILL.md) -- Sunbytes implementation guardrails for NestJS (v10/11) — modules, DI, controllers, DTOs, validation, guards, security, database patterns
+* [`sb-nextjs`](./skills/engineering/sb-nextjs/SKILL.md) -- Sunbytes implementation guardrails for Next.js (App Router) — Server/Client Components, caching, routing, security headers
+* [`sb-react`](./skills/engineering/sb-react/SKILL.md) -- Sunbytes implementation guardrails for React — components, hooks, state, performance, accessibility, security
+* [`sb-typescript`](./skills/engineering/sb-typescript/SKILL.md) -- Sunbytes implementation guardrails for TypeScript — strict typing, async, security, SOLID/KISS/DRY, testing, Sunbytes coding standards
 * [`setup-sunbytes-skills`](./skills/engineering/setup-sunbytes-skills/SKILL.md) -- Bootstrap a repo's `## Agent skills` config (issue tracker, triage labels, domain docs) for the engineering skills
 * [`tdd`](./skills/engineering/tdd/SKILL.md) -- Test-driven development with the red-green-refactor loop
 * [`to-issues`](./skills/engineering/to-issues/SKILL.md) -- Break a plan or PRD into independently-grabbable issues using tracer-bullet vertical slices
