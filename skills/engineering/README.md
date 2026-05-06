@@ -6,6 +6,7 @@ Daily code work.
 * [`grill-with-docs`](./grill-with-docs/SKILL.md) -- Stress-test a plan against the project's domain model and update CONTEXT.md/ADRs inline
 * [`improve-codebase-architecture`](./improve-codebase-architecture/SKILL.md) -- Find deepening opportunities in a codebase, informed by CONTEXT.md and `docs/adr/`
 * [`review-pr`](./review-pr/SKILL.md) -- End-to-end GitHub PR review (code, security, conventions, tests) that posts top-level and inline comments via `gh`
+* [`sb-audit-nodejs`](./sb-audit-nodejs/SKILL.md) -- Audit a Node.js project across maintainability, security, and scalability; writes a dated report to `docs/` with a high-risk summary and an improvement plan ready for `/to-issues`
 * [`sb-nestjs`](./sb-nestjs/SKILL.md) -- Sunbytes implementation guardrails for NestJS (v10/11) — modules, DI, controllers, DTOs, validation, guards, security, database patterns
 * [`sb-nextjs`](./sb-nextjs/SKILL.md) -- Sunbytes implementation guardrails for Next.js (App Router) — Server/Client Components, caching, routing, security headers
 * [`sb-react`](./sb-react/SKILL.md) -- Sunbytes implementation guardrails for React — components, hooks, state, performance, accessibility, security

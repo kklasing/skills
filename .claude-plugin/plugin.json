@@ -5,6 +5,7 @@
     "./skills/engineering/grill-with-docs",
     "./skills/engineering/improve-codebase-architecture",
     "./skills/engineering/review-pr",
+    "./skills/engineering/sb-audit-nodejs",
     "./skills/engineering/sb-nestjs",
     "./skills/engineering/sb-nextjs",
     "./skills/engineering/sb-react",
