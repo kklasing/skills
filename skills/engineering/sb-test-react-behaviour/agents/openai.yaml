@@ -1,0 +1,7 @@
+interface:
+  display_name: "SB Test React Behaviour"
+  short_description: "Sunbytes React test workflow"
+  default_prompt: "Use $sb-test-react-behaviour for existing React component or hook behaviour tests."
+
+policy:
+  allow_implicit_invocation: true

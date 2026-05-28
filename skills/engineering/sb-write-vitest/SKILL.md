@@ -1,6 +1,6 @@
 ---
 name: sb-write-vitest
-description: Write modern Vitest unit tests for code that already exists. Use when the user wants to add unit tests, backfill coverage, or test a function/module/component that wasn't built test-first. Tests live beside the source file using `*.test.*` (never `*.spec.*` — `.spec.` is reserved for integration/e2e). Skip this skill and use `tdd` instead when the user is doing test-first development.
+description: Write modern Vitest unit tests for code that already exists. Use when the user wants to add unit tests, backfill coverage, or test a function/module that wasn't built test-first. Tests live beside the source file using `*.test.*` (never `*.spec.*` — `.spec.` is reserved for integration/e2e). For React component behaviour tests, use sb-test-react-behaviour. Skip this skill and use `tdd` instead when the user is doing test-first development.
 ---
 
 # Write Vitest Unit Tests
@@ -71,4 +71,4 @@ describe('totalCents', () => {
 });
 ```
 
-See [PATTERNS.md](PATTERNS.md) for mocking modules, spies, fake timers, async polling, error assertions, and React Testing Library.
+See [PATTERNS.md](PATTERNS.md) for mocking modules, spies, fake timers, async polling, and error assertions.

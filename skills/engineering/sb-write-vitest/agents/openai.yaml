@@ -1,0 +1,7 @@
+interface:
+  display_name: "SB Write Vitest"
+  short_description: "Sunbytes Vitest unit tests"
+  default_prompt: "Use $sb-write-vitest for backfilling non-React Vitest unit tests and local testing conventions."
+
+policy:
+  allow_implicit_invocation: true

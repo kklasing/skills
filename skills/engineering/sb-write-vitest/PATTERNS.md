@@ -126,28 +126,6 @@ it.each([
 });
 ```
 
-## React components (with Testing Library)
-
-```ts
-// src/Counter.test.tsx
-import { describe, expect, it } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import { Counter } from './Counter';
-
-describe('<Counter>', () => {
-  it('increments the visible count when the button is clicked', async () => {
-    render(<Counter />);
-
-    await userEvent.click(screen.getByRole('button', { name: /increment/i }));
-
-    expect(screen.getByText('1')).toBeInTheDocument();
-  });
-});
-```
-
-Set `environment: 'jsdom'` (or `'happy-dom'`) in `vitest.config`, and import `'@testing-library/jest-dom/vitest'` in your setup file so matchers like `toBeInTheDocument` are typed correctly.
-
 ## Snapshots
 
 Use snapshots sparingly — they're great for stable serialized output (e.g. a config object, a small DOM fragment) and terrible for anything that changes often. Prefer `toMatchInlineSnapshot()` over file snapshots so the expected value is visible in the test.

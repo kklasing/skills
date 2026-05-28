@@ -1,10 +1,13 @@
 # React behaviour test patterns
 
-Concrete recipes for the cases that come up most when backfilling React component tests. Stack: Vitest + `@testing-library/react` + `@testing-library/user-event`.
+Concrete recipes for backfilling React component tests.
+
+For query semantics, user-event details, async helpers, `within`, `renderHook`, debugging, and RTL configuration, use [`react-testing-library`](../react-testing-library/SKILL.md).
+For mocking, timers, and other Vitest mechanics, use [`vitest`](../vitest/SKILL.md).
 
 ## Render helper with providers
 
-If the component reads from a provider (TanStack Query, Router, theme), build one helper in the test file instead of repeating boilerplate.
+If the component reads from a provider, build one helper in the test file instead of repeating boilerplate.
 
 ```tsx
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -27,11 +30,7 @@ function renderWithProviders(ui: ReactElement, options?: RenderOptions) {
 }
 ```
 
-Disable retries on the test `QueryClient` — otherwise rejected fetches stall the test.
-
-## Setting up `userEvent`
-
-Call `userEvent.setup()` once per test so typing and clicks share a consistent pointer/keyboard session.
+## Forms
 
 ```tsx
 it('submits the form when the user fills both fields and clicks save', async () => {
@@ -47,9 +46,7 @@ it('submits the form when the user fills both fields and clicks save', async () 
 });
 ```
 
-## Async UI — `findBy*` over `waitFor`
-
-`findBy*` is `getBy* + waitFor` in one call. Reach for it first; only fall back to `waitFor` for assertions `findBy` can't express.
+## Async UI
 
 ```tsx
 it('shows the loaded items after fetching', async () => {
@@ -73,40 +70,7 @@ it('clears the error banner once the retry succeeds', async () => {
 });
 ```
 
-Use `queryBy*` (not `getBy*`) when asserting absence — `getBy*` throws if the element is missing.
-
-## Forms — typing, validation, submission
-
-```tsx
-it('shows a validation error when email is blank on submit', async () => {
-  const user = userEvent.setup();
-  render(<SignupForm onSubmit={vi.fn()} />);
-
-  await user.click(screen.getByRole('button', { name: /sign up/i }));
-
-  expect(
-    await screen.findByText(/email is required/i),
-  ).toBeInTheDocument();
-});
-
-it('clears the email error once a valid email is typed', async () => {
-  const user = userEvent.setup();
-  render(<SignupForm onSubmit={vi.fn()} />);
-
-  await user.click(screen.getByRole('button', { name: /sign up/i }));
-  expect(await screen.findByText(/email is required/i)).toBeInTheDocument();
-
-  await user.type(screen.getByLabelText(/email/i), 'ada@example.com');
-
-  expect(screen.queryByText(/email is required/i)).not.toBeInTheDocument();
-});
-```
-
-For native `<select>` use `user.selectOptions`. For custom comboboxes/listboxes, click the trigger then click the option by name — never reach for the DOM directly.
-
-## Asserting on callback props
-
-Assert that the callback received the right shape, not that "something was called".
+## Callback props
 
 ```tsx
 it('calls onSelect with the clicked item id', async () => {
@@ -120,16 +84,9 @@ it('calls onSelect with the clicked item id', async () => {
 });
 ```
 
-## Testing custom hooks with `renderHook`
-
-Custom hooks are tested by their public return value, not their internals. Wrap state updates in `act`.
+## Custom hooks
 
 ```ts
-// src/useCounter.test.ts
-import { describe, expect, it } from 'vitest';
-import { act, renderHook } from '@testing-library/react';
-import { useCounter } from './useCounter';
-
 describe('useCounter', () => {
   it('starts at the initial value', () => {
     const { result } = renderHook(() => useCounter(5));
@@ -147,18 +104,11 @@ describe('useCounter', () => {
 });
 ```
 
-For hooks that need providers (e.g. `useQuery`), pass `{ wrapper: Wrapper }` to `renderHook` — same wrapper you'd use in `renderWithProviders`.
+## Network
 
-## Mocking the network layer
-
-Two acceptable approaches. Prefer MSW for anything non-trivial.
-
-**MSW (preferred)** — define handlers once in `test/msw/handlers.ts`, start the server in your Vitest setup file, override handlers per test with `server.use(...)`.
+Prefer MSW for anything non-trivial.
 
 ```ts
-import { http, HttpResponse } from 'msw';
-import { server } from '../test/msw/server';
-
 it('shows the empty state when the API returns no items', async () => {
   server.use(http.get('/api/items', () => HttpResponse.json([])));
 
@@ -168,26 +118,7 @@ it('shows the empty state when the API returns no items', async () => {
 });
 ```
 
-**`vi.mock` of the fetch client** — fine for a single-call component, awkward for complex flows.
-
-```ts
-import { fetchItems } from './api';
-vi.mock('./api');
-
-it('renders the items returned by the API', async () => {
-  vi.mocked(fetchItems).mockResolvedValue([{ id: 'a1', label: 'Apple' }]);
-
-  renderWithProviders(<ItemsList />);
-
-  expect(await screen.findByRole('listitem', { name: /apple/i })).toBeInTheDocument();
-});
-```
-
-Never mock a child component of your own — render the real one. If a child is too heavy to render, that's a design smell to surface, not paper over.
-
-## Router-aware assertions
-
-For a component that navigates, render inside `MemoryRouter` with `initialEntries` and assert via what the user sees after navigation. Don't reach into router internals.
+## Router
 
 ```tsx
 it('navigates to the item detail page when an item is clicked', async () => {
@@ -207,9 +138,7 @@ it('navigates to the item detail page when an item is clicked', async () => {
 });
 ```
 
-## Fake timers around `userEvent`
-
-`userEvent.setup` needs to know if timers are fake — otherwise typing hangs forever.
+## Fake timers
 
 ```ts
 beforeEach(() => vi.useFakeTimers());
@@ -231,11 +160,11 @@ it('debounces the search input by 300ms', async () => {
 });
 ```
 
-## Accessibility smoke checks
+## Accessibility checks
 
 If the component is interactive, add at least one assertion that uses the accessibility tree:
 
-- `getByRole('button', { name: /save/i })` — proves the button has an accessible name.
-- `getByLabelText(/email/i)` — proves the input is labelled.
+- `getByRole('button', { name: /save/i })`
+- `getByLabelText(/email/i)`
 
-If you find yourself reaching for `getByTestId`, the component probably needs an `aria-label`, a visible label, or a semantic element instead. Fix that before adding the test id.
+If you need `getByTestId`, treat that as a signal to improve the component first.
