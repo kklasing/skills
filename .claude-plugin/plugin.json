@@ -9,6 +9,7 @@
     "./skills/engineering/sb-nestjs",
     "./skills/engineering/sb-nextjs",
     "./skills/engineering/sb-react",
+    "./skills/engineering/sb-setup-tooling",
     "./skills/engineering/sb-test-react-behaviour",
     "./skills/engineering/sb-typescript",
     "./skills/engineering/sb-write-vitest",
@@ -19,7 +20,6 @@
     "./skills/engineering/triage",
     "./skills/engineering/zoom-out",
     "./skills/misc/git-guardrails-claude-code",
-    "./skills/misc/setup-pre-commit",
     "./skills/productivity/grill-me",
     "./skills/productivity/write-a-skill"
   ]
