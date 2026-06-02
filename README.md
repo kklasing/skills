@@ -27,6 +27,7 @@ npx skills@latest add kklasing/skills
 * [`sb-nestjs`](./skills/engineering/sb-nestjs/SKILL.md) -- Sunbytes implementation guardrails for NestJS (v10/11) — modules, DI, controllers, DTOs, validation, guards, security, database patterns
 * [`sb-nextjs`](./skills/engineering/sb-nextjs/SKILL.md) -- Sunbytes implementation guardrails for Next.js (App Router) — Server/Client Components, caching, routing, security headers
 * [`sb-react`](./skills/engineering/sb-react/SKILL.md) -- Sunbytes implementation guardrails for React — components, hooks, state, performance, accessibility, security
+* [`sb-setup-tooling`](./skills/engineering/sb-setup-tooling/SKILL.md) -- Bootstrap baseline Node.js tooling — ESLint flat config, Prettier, EditorConfig, Husky hooks, commitlint, release-please, pnpm audit, Vitest (+ Istanbul/Testing Library) and Playwright
 * [`sb-test-react-behaviour`](./skills/engineering/sb-test-react-behaviour/SKILL.md) -- Backfill behaviour-focused tests for React components and custom hooks in `.tsx`/`.ts` using Vitest + React Testing Library + `user-event`
 * [`sb-typescript`](./skills/engineering/sb-typescript/SKILL.md) -- Sunbytes implementation guardrails for TypeScript — strict typing, async, security, SOLID/KISS/DRY, testing, Sunbytes coding standards
 * [`sb-write-vitest`](./skills/engineering/sb-write-vitest/SKILL.md) -- Backfill modern Vitest unit tests beside existing source files (`*.test.*`, never `*.spec.*`)
@@ -45,4 +46,3 @@ npx skills@latest add kklasing/skills
 ### Tools / misc
 
 * [`git-guardrails-claude-code`](./skills/misc/git-guardrails-claude-code/SKILL.md) -- Set up Claude Code hooks to block dangerous git commands (push, reset --hard, clean, branch -D, etc.)
-* [`setup-pre-commit`](./skills/misc/setup-pre-commit/SKILL.md) -- Set up Husky pre-commit hooks with lint-staged, type checking, vulnerability audits, and tests
