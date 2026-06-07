@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vitest"
+  short_description: "Vitest framework reference"
+  default_prompt: "Use $vitest for Vitest runner, mocking, timers, snapshots, and config guidance."
+
+policy:
+  allow_implicit_invocation: true

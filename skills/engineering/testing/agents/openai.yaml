@@ -1,0 +1,9 @@
+interface:
+  display_name: "Testing"
+  short_description: "Route to the right testing skill"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+  default_prompt: "Use $testing to write, backfill, audit, or verify tests for compliance with the testing skills."
+
+policy:
+  allow_implicit_invocation: true

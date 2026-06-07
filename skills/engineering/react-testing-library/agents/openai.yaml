@@ -1,0 +1,7 @@
+interface:
+  display_name: "React Testing Library"
+  short_description: "RTL API and patterns"
+  default_prompt: "Use $react-testing-library for Testing Library queries, user events, async helpers, debugging, and config."
+
+policy:
+  allow_implicit_invocation: true
